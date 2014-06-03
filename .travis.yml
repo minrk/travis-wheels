@@ -4,14 +4,18 @@ python:
 
 env:
   global:
-    wheelhouse=${HOME}/wheelhouse
-
     # Add the GH_TOKEN environment variable if we are in pelson/travis-wheels. Forks won't get this environment variable.
     secure: DA1YGXiz7kHAX6rIYtIF1TcRCCZKr/r0wGV2ws85zZQBlJOWvNTqi8q5Cca5vpceqL3yx9CeWmtyr4x20KUcQlN+DGoW3K4zdGXvM+6dzWGCpNB4TRJVTDT6ZrimB9KFZOtbMEjuwPa+qQ6xO+1ElHMNhER53iPwakt25ns6M1A=
 
+before_install:
+  - export wheelhouse=${HOME}/wheelhouse
+
 install:
-  git clone https://github.com/simplejson/simplejson
-  ./build_wheels.sh
+  - pip install wheel
+  - git clone https://github.com/simplejson/simplejson
+
+script:
+  - ./build_wheels.sh
 
 after_success:
-- ./push_wheels.sh
+  - ./push_wheels.sh
