@@ -1,6 +1,13 @@
-
+language: python
+python:
+  - 2.7
 
 env:
   global:
     # Add the GH_TOKEN environment variable if we are in pelson/travis-wheels. Forks won't get this environment variable.
     secure: DA1YGXiz7kHAX6rIYtIF1TcRCCZKr/r0wGV2ws85zZQBlJOWvNTqi8q5Cca5vpceqL3yx9CeWmtyr4x20KUcQlN+DGoW3K4zdGXvM+6dzWGCpNB4TRJVTDT6ZrimB9KFZOtbMEjuwPa+qQ6xO+1ElHMNhER53iPwakt25ns6M1A=
+
+
+install:
+  git clone https://github.com/simplejson/simplejson
+  ./build_wheels.sh
