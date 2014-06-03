@@ -3,7 +3,7 @@ travis-wheels
 
 A proof-of-concept for the generation and storage travis-ci applicable Python wheels.
 
-The primary work for this repo is done in the (builder)[https://github.com/pelson/travis-wheels/tree/builder] branch which, when updated,
+The primary work for this repo is done in the [builder](https://github.com/pelson/travis-wheels/tree/builder) branch which, when updated,
 triggers travis-ci to build binary wheels for various packages (this is currently only a proof of concept, so not many just yet).
 Travis then commits these wheels to the master's "wheelhouse" directory and pushes them back to github.
 
