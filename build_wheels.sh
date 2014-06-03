@@ -1,5 +1,6 @@
-mkdir /tmp/wheelhouse
+mkdir -p ${wheelhouse}
 
-pip wheel --wheel-dir=/tmp/wheelhouse ./simplejson
+pip wheel --wheel-dir=${wheelhouse} ./simplejson
 
-ls /tmp/wheelhouse
+ls ${wheelhouse}
+
