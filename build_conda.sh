@@ -6,7 +6,7 @@ export PATH="$HOME/miniconda/bin:$PATH"
 conda install conda-build binstar --yes
 
 
-git clone git@github.com:SciTools/conda-recipes-scitools.git
+git clone https://github.com/SciTools/conda-recipes-scitools.git
 
 cd conda-recipes-scitools
 
