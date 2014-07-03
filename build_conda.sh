@@ -12,6 +12,18 @@ cd conda-recipes-scitools
 # Replace the ssh protocol with https.
 find -type f -exec sed -i 's/git\@github.com\:/https\:\/\/github\.com\//g' {} \;
 
-conda build biggus
+for package in *; do
+    if [ -d "${package}" ]; then
+        echo "Building ${package}."
+        conda build ${package}
+    fi
+done
 
-# binstar ...
+# Only once we've built all the packages, upload them to binstar.
+for package in *; do
+    if [ -d "${package}" ]; then
+        package_fname=$(conda build ${package} --output)
+        binstar upload ${package_fname}
+    fi
+done
+
