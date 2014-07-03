@@ -9,6 +9,8 @@ conda install conda-build binstar --yes
 git clone https://github.com/SciTools/conda-recipes-scitools.git
 
 cd conda-recipes-scitools
+# Replace the ssh protocol with https.
+find -type f -exec sed -i 's/git\@github.com\:/https\:\/\/github\.com\//g' {} \;
 
 conda build biggus
 
