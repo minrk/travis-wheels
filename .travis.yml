@@ -6,6 +6,8 @@ env:
   global:
     # Add the GH_TOKEN environment variable if we are in pelson/travis-wheels. Forks won't get this environment variable.
     secure: DA1YGXiz7kHAX6rIYtIF1TcRCCZKr/r0wGV2ws85zZQBlJOWvNTqi8q5Cca5vpceqL3yx9CeWmtyr4x20KUcQlN+DGoW3K4zdGXvM+6dzWGCpNB4TRJVTDT6ZrimB9KFZOtbMEjuwPa+qQ6xO+1ElHMNhER53iPwakt25ns6M1A=
+    # Add the BINSTAR_TOKEN environment variable. This has been generated with "binstar auth --create" and is valid for the next 12 months.
+    secure: "O4BlGVjwWAvkZ4cuLK5RVc0NjUHA4N7URtyxkDH8MMA7/E4flhgaepUxfqjm7DnBMXoLTKO8eUPw9FipASRCYV9vR+dsPVCNiC4ZRRz37XGA7MYaJ/ipofDkoBoU5FUd1+MX1Mh4HYY3RE58Zm8lcMJ3Xo4BcMcpGzhSVbKu8DM="
 
 
 install:

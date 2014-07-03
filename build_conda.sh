@@ -5,6 +5,8 @@ export PATH="$HOME/miniconda/bin:$PATH"
 
 conda install conda-build binstar --yes
 
+# Crazily, conda needs jinja2...
+conda install jinja2 setuptools --yes
 
 git clone https://github.com/SciTools/conda-recipes-scitools.git
 
@@ -23,6 +25,8 @@ done
 for package in *; do
     if [ -d "${package}" ]; then
         package_fname=$(conda build ${package} --output)
+        echo "Filename: ${package_fname}"
+        ls ${package_fname}
         binstar -t ${BINSTAR_TOKEN} upload ${package_fname}
     fi
 done
