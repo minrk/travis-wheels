@@ -23,7 +23,7 @@ done
 for package in *; do
     if [ -d "${package}" ]; then
         package_fname=$(conda build ${package} --output)
-        binstar upload ${package_fname}
+        binstar -t ${BINSTAR_TOKEN} upload ${package_fname}
     fi
 done
 
