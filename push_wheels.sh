@@ -21,7 +21,7 @@ if [ "x$TRAVIS_PULL_REQUEST" == "xfalse" ] && [ "x$TRAVIS_BRANCH" == "x$BUILD_BR
       exit 0
     fi
     git commit -m "Latest wheels build by travis-ci."
-    git push
+    git push origin HEAD:${PUBLISH_BRANCH}
 else
     echo "Not pushing to ${PUBLISH_BRANCH}. In PR: ${TRAVIS_PULL_REQUEST}; Branch: ${TRAVIS_BRANCH};"
 fi
