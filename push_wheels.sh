@@ -19,7 +19,6 @@ if [ "x$TRAVIS_PULL_REQUEST" == "xfalse" ] && [ "x$TRAVIS_BRANCH" == "x$BUILD_BR
     git add --all wheelhouse
     git status
     if [ -z $(git diff HEAD) ]; then
-      echo "Nothing to commit"
       exit 0
     fi
     git commit -m "Latest wheels build by travis-ci."

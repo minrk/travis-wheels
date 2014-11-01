@@ -12,5 +12,4 @@ before_script:
   - git clone --quiet --depth=1 --branch=$PUBLISH_BRANCH https://$GH_TOKEN@github.com/$TRAVIS_REPO_SLUG travis-wheels
 script:
   - ./build_wheels.sh
-after_success:
   - ./push_wheels.sh
