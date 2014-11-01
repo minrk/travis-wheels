@@ -3,11 +3,13 @@ python:
   - 2.7
 env:
   global:
-    - wheelhouse=$HOME/wheelhouse
+    - PUBLISH_BRANCH=master BUILD_BRANCH="builder" wheelhouse="$HOME/wheelhouse"
     # GH_TOKEN created with `travis encrypt GH_TOKEN=$TOKEN --add env.global`
     - secure: CM0zA00SdvRDu2AVKw+w55VxeX/StKNIrzt1RpxCPIeWNQXgTxkcsN6Xq/rmhuUvgEWeXkt4hLg1CgaMqvlkPI9o45ddyIEBDzmzLOIXlccsJ/owKKmF98MsMBrKPA+qdP3fbfzkpVUk+AYZ9FGpe0PFZ5AKGZCQ5vu3g4CCdDc=
 install:
   - pip install wheel
+before_script:
+  - git clone --quiet --depth=1 --branch=$PUBLISH_BRANCH https://$GH_TOKEN@github.com/$TRAVIS_REPO_SLUG travis-wheels
 script:
   - ./build_wheels.sh
 after_success:
