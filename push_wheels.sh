@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 set -e
 
@@ -15,9 +15,9 @@ if [ "x$TRAVIS_PULL_REQUEST" == "xfalse" ] && [ "x$TRAVIS_BRANCH" == "x$BUILD_BR
     git clone --quiet --branch=${PUBLISH_BRANCH} https://${GH_TOKEN}@github.com/${REPO} travis-wheels > /dev/null
 
     cd travis-wheels
-
+    rm -rf wheelhouse
     mkdir wheelhouse
-    cp -Rf ${wheelhouse}/*.whl ./wheelhouse/
+    cp -Rf ${wheelhouse}/*.whl wheelhouse/
     git status
     git add wheelhouse wheelhouse/*.whl
     git commit -m "Latest wheels build by travis-ci."
