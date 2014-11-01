@@ -1,6 +1,10 @@
-mkdir -p ${wheelhouse}
+#!/bin/sh
 
-pip wheel --wheel-dir=${wheelhouse} ./simplejson
+set -e
+
+test -d ${wheelhouse} || mkdir -p ${wheelhouse}
+
+pip wheel --wheel-dir=${wheelhouse} -r requirements.txt
 
 ls ${wheelhouse}
 

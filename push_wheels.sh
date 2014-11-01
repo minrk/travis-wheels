@@ -1,9 +1,12 @@
+#!/bin/sh
+
+set -e
+
 export BUILD_BRANCH="builder"
 export PUBLISH_BRANCH="master"
-export REPO=pelson/travis-wheels
+export REPO="$TRAVIS_REPO_SLUG"
 
-
-if [ "$TRAVIS_REPO_SLUG" == $REPO ] && [ "$TRAVIS_PULL_REQUEST" == "false" ] && [ "$TRAVIS_BRANCH" == ${BUILD_BRANCH} ]; then
+if [ "x$TRAVIS_PULL_REQUEST" == "xfalse" ] && [ "x$TRAVIS_BRANCH" == "x$BUILD_BRANCH" ]; then
 
     echo "Pushing to ${PUBLISH_BRANCH}."
 
