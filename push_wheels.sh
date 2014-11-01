@@ -14,8 +14,7 @@ if [ "x$TRAVIS_PULL_REQUEST" == "xfalse" ] && [ "x$TRAVIS_BRANCH" == "x$BUILD_BR
     git config --global user.name "travis-ci"
     
     cd travis-wheels
-    git rm -rf wheelhouse
-    cp -Rf ${wheelhouse} wheelhouse
+    cp ${wheelhouse}/*.whl wheelhouse/
     git add --all wheelhouse
     git status
     if [ -z $(git diff HEAD) ]; then
