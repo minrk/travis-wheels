@@ -1,1 +1,9 @@
-simplejson
+tornado
+mistune
+sphinx
+requests
+jsonschema
+pygments
+pyzmq
+mock
+ipython[all]
