@@ -1,4 +1,4 @@
-tornado<4
+tornado
 mistune
 sphinx
 requests
@@ -6,4 +6,6 @@ jsonschema
 pygments
 pyzmq
 mock
+sqlalchemy
+simplepam
 ipython[all]
