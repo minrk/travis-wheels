@@ -14,6 +14,7 @@ if [ "x$TRAVIS_PULL_REQUEST" == "xfalse" ] && [ "x$TRAVIS_BRANCH" == "x$BUILD_BR
     git config --global user.name "travis-ci"
     
     cd travis-wheels
+    git pull origin $PUBLISH_BRANCH
     cp ${wheelhouse}/*.whl wheelhouse/
     git add --all wheelhouse
     git status
