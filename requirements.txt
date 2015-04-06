@@ -10,4 +10,5 @@ pyzmq
 mock
 sqlalchemy
 simplepam
+pytest-cov
 ipython[all]

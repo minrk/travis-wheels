@@ -13,6 +13,7 @@ env:
 install:
   - pip install wheel
 before_script:
+  - export PUBLISH_BRANCH=$TRAVIS_PYTHON_VERSION
   - git clone --quiet --depth=1 --branch=$PUBLISH_BRANCH https://$GH_TOKEN@github.com/$TRAVIS_REPO_SLUG travis-wheels
 script:
   - ./build_wheels.sh
