@@ -11,4 +11,7 @@ mock
 sqlalchemy
 simplepam
 pytest-cov
+pexpect
+decorator
+path.py
 ipython[all]
