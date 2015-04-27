@@ -10,7 +10,7 @@ if [[ "${TRAVIS_PYTHON_VERSION}" == "2.6" || "${TRAVIS_PYTHON_VERSION}" == "3.2"
   requirements=requirements26.txt
 fi
 
-pip wheel -f travis-wheels/wheelhouse --wheel-dir=${wheelhouse} -r $requirements
+pip wheel -f "file://$PWD/travis-wheels/wheelhouse" --wheel-dir=${wheelhouse} -r $requirements
 
 ls ${wheelhouse}
 
