@@ -1,5 +1,6 @@
 coveralls
 cython
+gevent; python_version == '2.7'
 tornado
 mistune
 sphinx
