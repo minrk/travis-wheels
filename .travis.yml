@@ -18,4 +18,7 @@ before_script:
   - git clone --quiet --depth=1 --branch=$PUBLISH_BRANCH https://$GH_TOKEN@github.com/$TRAVIS_REPO_SLUG travis-wheels
 script:
   - ./build_wheels.sh
-  - ./push_wheels.sh
+  - travis_retry ./push_wheels.sh
+matrix:
+  allow_failures:
+    - python: nightly
