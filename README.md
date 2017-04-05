@@ -1,6 +1,12 @@
 travis-wheels
 =============
 
+**This package is deprecated**
+
+Since Python has manylinux wheels now and packages like numpy, scipy, and matplotlib all build them, there is little need to maintain up-to-date wheels for Travis, as package maintainers are already doing it.
+
+Original README:
+
 A proof-of-concept for the generation and storage travis-ci applicable Python wheels.
 
 The primary work for this repo is done in the [builder](https://github.com/pelson/travis-wheels/tree/builder) branch which, when updated,
